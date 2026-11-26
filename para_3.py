@@ -1,5 +1,7 @@
 text1 = open("text1.txt", encoding="utf-8").read().lower()
 text2 = open("text2.txt", encoding="utf-8").read().lower()
+stroka = "ababbb"
+print(stroka, stroka.count('ab'))
 alf ="абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
 #text1 - Лермонтов, text2 - Достоевский
 
