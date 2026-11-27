@@ -16,11 +16,6 @@ figura = [ #По сути это глайдер (других фигур не п
 for x,y in figura:
     pole[x][y] = 1
 
-"""
-Если клетка была «мёртвой», но 3 её соседа живы, то клетка стала «живой».
-Если клетка была «живой» и у нее либо меньше 2, либо больше 3 соседей, то клетка становится «мёртвой».
-В противном случае клетка сохранит предыдущее состояние.
-"""
 def spawn_sosed(setka,x,y):
     count = 0
     for dx in (-1,0,1):
@@ -42,6 +37,7 @@ def generation(setka):
 
                  if not live and sosed == 3:
                       new_setka[x][y] = 1
+   
                  elif live and (sosed < 2 or sosed > 3):
                         new_setka[x][y] = 0
                  else:
@@ -51,6 +47,6 @@ def generation(setka):
 # plt.colorbar()
 for i in range(TAKT):
     plt.imshow(pole, cmap = "binary")
-    plt.pause(0.1) #Без этого цикл сразу переходил к концу. Об этой косанде я не знал. Подсказал ИИ :/
+    plt.pause(0.1) #Без этого цикл сразу переходил к концу. Об этой команде я не знал. Подсказал ИИ :/
     pole = generation(pole)
 plt.show()
