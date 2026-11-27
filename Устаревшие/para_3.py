@@ -7,7 +7,7 @@ alf ="абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
 
 list_of_pair = [x+y for x in alf for y in alf]
 #print(list_of_pair)
-list1 = [text1.count(para) for para in list_of_pair]
+list1 = [text1.count(para)/ len(text1) for para in list_of_pair]
 list2 = [text2.count(para) for para in list_of_pair]
 
 chastota1 = [i / len(text1) for i in list1]

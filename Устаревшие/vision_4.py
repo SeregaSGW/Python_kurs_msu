@@ -14,14 +14,13 @@ ____________________________________________________
 alf = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
 text = open("Esenin_1.txt", encoding="utf-8").read().lower()
 key = open("Esenin_2.txt", encoding="utf-8").read().lower()
-shifr = [alf[(alf.find(text[i]) + alf.find(key[i % len(key)]))%33] for i in range(len(text))]
+shifr = [alf[(alf.find(text[i]) + alf.find(key[i % len(key)]))%len(alf)] for i in range(len(text))]
 '''
 shifr = []
 for i in range(len(text)):
     text_i = alf.find(text[i])
     key_i = alf.find(key[i])
-    if text_i != -1 and key_i != -1:
-        shifr.append(alf[(text_i + key_i)%33])
+    shifr.append(alf[(text_i + key_i)%33])
 '''
 for i in shifr:
     print(i)
